@@ -6,15 +6,20 @@
 
 #define _TYPE_ int
 
-typedef struct Node{
-    _TYPE_ info;
+//Estrutura de um Nó contendo a informação desejada
+//e um ponteiro para o próximo nó.
+typedef struct Node{                
+    _TYPE_ info;                    
     struct Node *next;
 }Node;
 
+//Estrutura contendo um ponteiro
+//para o Nó que se encontra no topo da pilha.
 typedef struct{
     Node *top;
 }Stack;
 
+//Inicializando e Finalizando
 void initStack(Stack *S) {
     S->top = NULL;
 }
@@ -28,6 +33,7 @@ void finalizeStack(Stack *S) {
     }
 }
 
+//Testes, vazia ou cheia
 int emptyStack(Stack S) {
     return S.top == NULL;
 }
@@ -43,6 +49,7 @@ int fullStack(Stack S) {
     }
 }
 
+//Inserção e Remoção
 void insertStack(Stack *S, _TYPE_ info) {
     if(fullStack(*S)) {
         printf("The Stack is full");
@@ -57,7 +64,6 @@ void insertStack(Stack *S, _TYPE_ info) {
         S->top = aux;
     }
 }
-
 void removeStack(Stack *S) {
     Node *aux;
 
@@ -71,6 +77,7 @@ void removeStack(Stack *S) {
     }
 }
 
+//Retornando Valores
 _TYPE_ top(Stack S) {
     if(emptyStack(S)) {
         printf("Stack is empty");
