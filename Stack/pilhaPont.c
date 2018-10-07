@@ -61,13 +61,22 @@ void insertStack(Stack *S, _TYPE_ info) {
 void removeStack(Stack *S) {
     Node *aux;
 
-    if(_ERROR_EMPTY_) {
-        printf("Stack is full");
-        exit(_ERROR_FULL_);
+    if(emptyStack(*S)) {
+        printf("Stack is empty");
+        exit(_ERROR_EMPTY_);
     } else {
         aux = S->top;
         S->top = aux->next;
         free(aux);
+    }
+}
+
+_TYPE_ top(Stack S) {
+    if(emptyStack(S)) {
+        printf("Stack is empty");
+        exit(_ERROR_EMPTY_);
+    } else {
+        return S.top->info;
     }
 }
 
