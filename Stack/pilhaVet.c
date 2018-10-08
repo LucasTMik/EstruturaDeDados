@@ -9,6 +9,7 @@
 #define _TYPE_ int
 
 //Estrutura contendo um vetor com as informações
+//e um inteiro apontando para o índice do topo no vetor
 typedef struct {
     _TYPE_ v[_MAX_];
     int top;
