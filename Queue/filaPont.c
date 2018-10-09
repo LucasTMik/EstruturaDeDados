@@ -122,16 +122,3 @@ _TYPE_ lastQueue(Queue Q) {
         return Q.end->info;
 }
 
-int main(void) {
-    Queue fila;
-
-    initQueue(&fila);
- 
-   
-    insertQueue(&fila,10);
-    printf("%i", firstQueue(fila));
-    
-    finalizeQueue(&fila);
-    
-
-}
